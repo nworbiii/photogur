@@ -1,19 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-    <% @pictures.each do |picture| %>
-        <div class="box">  
-          <%= image_tag picture.url %>
-          <div class="options">
-            <h2 class="pic-title"><%= picture.title %></h2>
-            <ul>  
-              <li><%= link_to 'Show', picture %></li>
-              <li><%= link_to 'Edit', edit_picture_path(picture) %></li>
-              <li><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-            </ul>
-          </div> <!-- end options -->
-        </div> <!-- end box -->
-    <% end %>
-</div> <!-- end container -->
-
-<br>
+<% @pictures.each do |picture| %>
+    <div class="box">  
+      <%= image_tag picture.url %>
+      <div class="options">
+        <h2 class="pic-title"><%= picture.title %></h2>
+        <ul>  
+          <li><%= link_to 'Show', picture %></li>
+          <li><%= link_to 'Edit', edit_picture_path(picture) %></li>
+          <li><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </div> <!-- end options -->
+    </div> <!-- end box -->
+<% end %>

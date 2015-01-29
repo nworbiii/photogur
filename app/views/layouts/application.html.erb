@@ -7,11 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav>		
-		<h1>Photogur</h1>
-		<%= link_to 'New Picture', new_picture_path %>
-	</nav>
-<%= yield %>
+
+<nav>		
+	<h1>Photogur</h1>
+	<%= link_to 'New Picture', new_picture_path %>
+</nav>
+<div class="container">
+	<%= yield %>
+</div>
 
 </body>
 </html>

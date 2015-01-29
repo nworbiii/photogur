@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :pictures
 
+  root to: 'pictures#index'
+  get '/new_picture' => 'pictures#new', as: 'new_pic' # new_pic_path
+  get '/all' => 'pictures#index', as: 'all_pics'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

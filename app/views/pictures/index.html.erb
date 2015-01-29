@@ -1,29 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Pictures</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
     <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.title %></td>
-        <td><%= picture.url %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="box">  
+          <%= image_tag picture.url %>
+          <div class="options">
+            <h2><%= picture.title %></h2>
+            <ul>  
+              <li><%= link_to 'Show', picture %></li>
+              <li><%= link_to 'Edit', edit_picture_path(picture) %></li>
+              <li><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            </ul>
+          </div> <!-- end options -->
+        </div> <!-- end box -->
     <% end %>
-  </tbody>
-</table>
+</div> <!-- end container -->
 
 <br>
-
-<%= link_to 'New Picture', new_picture_path %>

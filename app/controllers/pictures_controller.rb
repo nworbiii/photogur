@@ -10,6 +10,11 @@ class PicturesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @picture }
+      format.xml { render xml: @picture }
+    end
   end
 
   # GET /pictures/new
